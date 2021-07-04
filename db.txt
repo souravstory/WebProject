@@ -1,0 +1,84 @@
+drop database if exists ecom;
+create database ecom;
+use ecom;
+
+
+
+create table cat( 
+	cat_id INT(10) AUTO_INCREMENT, 
+	cat_name char(100), 
+	PRIMARY KEY(cat_id) 
+);
+insert into cat values ( '', 'Book');
+insert into cat values ( '', 'Gadget');
+
+
+
+create table sub_cat( 
+	sub_cat_id INT(10) AUTO_INCREMENT, 
+	cat_id INT(10), 
+	sub_cat_name char(100), 
+	PRIMARY KEY(sub_cat_id)
+);
+insert into sub_cat values ( '', '1', 'Computer');
+insert into sub_cat values ( '', '1', 'Business');
+
+insert into sub_cat values ( '', 2, 'Mobile' );
+insert into sub_cat values ( '', 2, 'Computer' );
+
+
+
+create table sub_sub_cat( 
+	sub_sub_cat_id INT(10) AUTO_INCREMENT, 
+	sub_cat_id INT(10), 
+	sub_sub_cat_name char(100), 
+	PRIMARY KEY(sub_sub_cat_id)
+);
+insert into sub_sub_cat values ( '', '1', 'PHP');
+insert into sub_sub_cat values ( '', '1', 'JAVA');
+
+insert into sub_sub_cat values ( '', '2', 'Accounting');
+insert into sub_sub_cat values ( '', '2', 'Marketing');
+
+insert into sub_sub_cat values ( '', '3', 'Apple');
+insert into sub_sub_cat values ( '', '3', 'Samsung');
+
+insert into sub_sub_cat values ( '', '4', 'HP');
+insert into sub_sub_cat values ( '', '4', 'ASUS');
+
+
+
+create table item_list (
+	item_id INT(10) AUTO_INCREMENT,
+	sub_sub_cat_id INT(10),
+	quantity int(10), 
+	price int(20),
+	item_name char(100),
+	PRIMARY KEY(item_id)
+);
+
+insert into item_list values ( '', '1', '10', '20', 'Mastering PHP');
+insert into item_list values ( '', '1', '10', '20', 'PHP in 3 days');
+
+insert into item_list values ( '', '2', '10', '20', 'Programing with java');
+insert into item_list values ( '', '2', '10', '20', 'Java in 30 days');
+
+insert into item_list values ( '', '3', '10', '20', 'Principles of Accounting');
+insert into item_list values ( '', '3', '10', '20', 'Practical Accounting');
+
+insert into item_list values ( '', '4', '10', '20', 'Principles of Marketing');
+insert into item_list values ( '', '4', '10', '20', 'Practical Marketing');
+
+insert into item_list values ( '', '5', '10', '20', 'iPhone 101');
+insert into item_list values ( '', '5', '10', '20', 'iPhone 102');
+
+insert into item_list values ( '', '6', '10', '20', 'Galaxy 101');
+insert into item_list values ( '', '6', '10', '20', 'Galaxy 102');
+
+insert into item_list values ( '', '7', '10', '20', 'HP-101');
+insert into item_list values ( '', '7', '10', '20', 'HP-102');
+
+insert into item_list values ( '', '8', '10', '20', 'ASUS-101');
+insert into item_list values ( '', '8', '10', '20', 'ASUS-102');
+
+
